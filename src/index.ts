@@ -44,10 +44,16 @@ client.on('guildMemberAdd', async (member: GuildMember) => {
             topic: `Verification for user ${member.displayName}`,
             type: 'text',
             parent: category_channel,
-            permissionOverwrites: [{id: member.id, allow: ["READ_MESSAGE_HISTORY", "SEND_MESSAGES"]}]
+            permissionOverwrites: category_channel.permissionOverwrites.array()
         }),
         member: member,
     };
+
+    verifying_user.channel.updateOverwrite(member.id, {
+        READ_MESSAGE_HISTORY: true,
+        SEND_MESSAGES: true,
+        VIEW_CHANNEL: true
+    });
 
     verifying_user.channel.send((message.replace(/:username/g, member.displayName)).replace(/:user_id/g, member.id));
 });
