@@ -49,7 +49,7 @@ client.on('guildMemberAdd', async (member: GuildMember) => {
         member: member,
     };
 
-    verifying_user.channel.updateOverwrite(member.id, {
+    await verifying_user.channel.updateOverwrite(member.id, {
         READ_MESSAGE_HISTORY: true,
         SEND_MESSAGES: true,
         VIEW_CHANNEL: true
