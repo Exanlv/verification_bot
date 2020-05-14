@@ -106,4 +106,8 @@ async function verification_ended(user: User) {
     delete verifying_users[user.id];
 }
 
+client.on('error', (error) => {
+    console.log(error);
+});
+
 client.login(process.env.BOT_TOKEN);
