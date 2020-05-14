@@ -1,0 +1,16 @@
+{
+  "name": "verification_bot",
+  "version": "1.0.0",
+  "description": "Bot to handle verification of a discord server",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Exan",
+  "license": "ISC",
+  "dependencies": {
+    "@exan/envreader": "^1.0.4",
+    "@types/node": "^13.11.1",
+    "discord.js": "^12.1.1"
+  }
+}
